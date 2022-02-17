@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/guguel-map/static/js/main.63fc8606.js",
-    "index.html": "/guguel-map/index.html",
-    "main.63fc8606.js.map": "/guguel-map/static/js/main.63fc8606.js.map"
+    "main.js": "/Guguel-Map/static/js/main.63fc8606.js",
+    "index.html": "/Guguel-Map/index.html",
+    "main.63fc8606.js.map": "/Guguel-Map/static/js/main.63fc8606.js.map"
   },
   "entrypoints": [
     "static/js/main.63fc8606.js"
