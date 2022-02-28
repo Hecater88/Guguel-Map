@@ -6,14 +6,12 @@ import useStyles from './styles';
 
 const Header = ({ onPlaceChanged, onLoad }) => {
   const classes = useStyles();
+
   return (
-    <AppBar position="static">
+    <AppBar position="sticky" className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
         <Typography variant="h5" className={classes.title}>
-          Travel Advisor
-        </Typography>
-        <Typography variant="h6" className={classes.title}>
-          Explore new places
+          Guguel Maps
         </Typography>
         <Box display="flex">
           <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
