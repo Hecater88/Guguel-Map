@@ -8,7 +8,7 @@ import Map from "./components/Map/Map";
 
 const App = () => {
   /* Maps Changes */
-  const [coordinates, setCoordinates] = useState({});
+  const [coords, setCoordinates] = useState({});
   const [bounds, setBounds] = useState(null);
   /* Places Changes*/
   const [weatherData, setWeatherData] = useState([]);
@@ -30,14 +30,14 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const filtered= places.filter((place) => Number(place.rating) > rating);
+    const filtered= places?.filter((place) => Number(place.rating) > rating);
     setFilteredPlaces(filtered);
-  }, [rating]);
+  }, [rating, places]);
 
   useEffect(() => {
     if (bounds) {
       setIsLoading(true);
-      getWeatherData(coordinates.lat, coordinates.lng)
+      getWeatherData(coords.lat, coords.lng)
         .then((data) => setWeatherData(data));
 
       getPlacesData(type, bounds.sw, bounds.ne)
@@ -79,7 +79,7 @@ const App = () => {
             childClicked={childClicked}
             setCoordinates={setCoordinates}
             setBounds={setBounds}
-            coordinates={coordinates}
+            coords={coords}
             places={filteredPlaces.length ? filteredPlaces : places}
             setChildClicked={setChildClicked}
             weatherData={weatherData}

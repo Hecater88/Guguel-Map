@@ -6,7 +6,7 @@ import Rating from '@material-ui/lab/Rating';
 import useStyles from './styles';
 import mapStyles from './mapStyles';
 
-const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClicked, weatherData}) => {
+const Map = ({ setCoordinates, setBounds, coords, places, setChildClicked, weatherData}) => {
   const classes = useStyles();
   const isDesktop = useMediaQuery('(min-width:600px)');
 
@@ -14,18 +14,18 @@ const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClicked, 
     <div className={classes.mapContainer}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
-        defaultCenter={coordinates}
-        center={coordinates}
+        defaultCenter={coords}
+        center={coords}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
-        options={{disableDefaultUI: true, coomControl: true, styles: mapStyles}}
+        options={{disableDefaultUI: true, zoomControl: true, styles: mapStyles}}
         onChange={(e) => {
           setCoordinates({ lat: e.center.lat, lng: e.center.lng })
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw })
         }}
-        onChildClick={(child) => {setChildClicked(child)}}
+        onChildClick={(child) => setChildClicked(child)}
       >
-        {places?.length && places?.map((place, i) => (
+        {places?.map((place, i) => (
           <div 
           className={classes.markerContainer} 
           lat={Number(place.latitude)} 

@@ -12,8 +12,6 @@ const List = ({ places, childClicked, isLoading, type, setType, rating, setRatin
     setElRefs((refs) => Array(places.length).fill().map((_, i) => refs[i] || createRef()));
   }, [places]);
 
-  console.log({ childClicked });
-
   return (
     <div className={classes.containers}>
       <Typography variant="h4">Restaurants, Hotels & Attractions around you</Typography>
