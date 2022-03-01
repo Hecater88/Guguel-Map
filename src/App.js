@@ -10,16 +10,16 @@ const App = () => {
   /* Maps Changes */
   const [coords, setCoordinates] = useState({});
   const [bounds, setBounds] = useState(null);
-  /* Places Changes*/
+  /* API changes*/
   const [weatherData, setWeatherData] = useState([]);
-  const [filteredPlaces, setFilteredPlaces] = useState([])
   const [places, setPlaces] = useState([]);
+  const [filteredPlaces, setFilteredPlaces] = useState([])
   /* Components Changes*/
   const [autocomplete, setAutocomplete] = useState(null);
-  const [childClicked, setChildClicked] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState('');
+  const [childClicked, setChildClicked] = useState(null);
   
 
   useEffect(() => {
