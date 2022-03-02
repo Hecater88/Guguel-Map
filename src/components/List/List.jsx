@@ -7,7 +7,6 @@ const List = ({ places, childClicked, isLoading, type, setType, rating, setRatin
   const [elRefs, setElRefs] = useState([])
   const classes = useStyles();
 
-
   useEffect(() => {
     setElRefs((refs) => Array(places.length).fill().map((_, i) => refs[i] || createRef()));
   }, [places]);
@@ -30,6 +29,7 @@ const List = ({ places, childClicked, isLoading, type, setType, rating, setRatin
               {/* <MenuItem value="atractions">Atractions</MenuItem> */}
             </Select>
           </FormControl>
+          
           <FormControl className={classes.formControl}>
             <InputLabel>Rating</InputLabel>
             <Select value={rating} onChange={(e) => setRating(e.target.value)}>

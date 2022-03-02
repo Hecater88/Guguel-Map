@@ -29,6 +29,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
           <Typography variant="subtitle1">Ranking</Typography>
           <Typography gutterBottom variant="subtitle1">{place.rankings}</Typography>
         </Box>
+
         {place?.awards?.map((award,i) => (
           <Box key={i} my={1} display="flex" justifyContent="space-between" alignItems="center">
             <img src={award.images.small} alt={award.display_name} />
@@ -59,6 +60,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
             Trip Advisor
           </Button>
         )}
+        
         {place.website && (
           <Button size="small" color="primary" onClick={() => window.open(place.website, '_blank')}>
             Website
